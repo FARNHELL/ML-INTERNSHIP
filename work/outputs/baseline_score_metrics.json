@@ -1,0 +1,16 @@
+{
+  "data_source": "warehouse: March features, April held-out label",
+  "eligible_rows": 23936,
+  "label_definition": "April impressions are more than 20% below March",
+  "base_rate": 0.5706885026737968,
+  "rule": "staleness_rank + volume_rank",
+  "reason_code": "staleness_plus_volume",
+  "precision_at_k": {
+    "10": 0.7,
+    "20": 0.6,
+    "50": 0.48,
+    "100": 0.39,
+    "500": 0.338
+  },
+  "roc_auc": 0.5062499216357664
+}
