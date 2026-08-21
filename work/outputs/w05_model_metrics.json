@@ -1,0 +1,52 @@
+{
+  "data_source": "warehouse: March features, April held-out label",
+  "split": {
+    "random_state": 42,
+    "group_column": "client_hash_id",
+    "train_rows": 21887,
+    "test_rows": 2049,
+    "train_clients": 24,
+    "test_clients": 8
+  },
+  "features": [
+    "feat_impr_7d",
+    "feat_clicks_7d",
+    "feat_pos_7d",
+    "feat_scroll_7d",
+    "content_type"
+  ],
+  "label": "observed_forward_decline: April impressions are >20% below March",
+  "test_base_rate": 0.6939970717423133,
+  "same_split_baseline": {
+    "rule": "staleness_rank + volume_rank",
+    "precision_at_k": {
+      "10": 0.7,
+      "20": 0.4,
+      "50": 0.6,
+      "100": 0.67,
+      "500": 0.77
+    },
+    "roc_auc": 0.5895317824032015
+  },
+  "logistic_regression": {
+    "precision_at_k": {
+      "10": 0.6,
+      "20": 0.7,
+      "50": 0.68,
+      "100": 0.66,
+      "500": 0.654
+    },
+    "roc_auc": 0.46339140909427384
+  },
+  "week4_full_queue_reference_only": {
+    "base_rate": 0.571,
+    "precision_at_k": {
+      "10": 0.7,
+      "20": 0.6,
+      "50": 0.48,
+      "100": 0.39,
+      "500": 0.338
+    },
+    "roc_auc": 0.506
+  }
+}
