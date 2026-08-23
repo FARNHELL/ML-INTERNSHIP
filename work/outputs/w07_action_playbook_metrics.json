@@ -1,0 +1,57 @@
+{
+  "decision": "Use the Week 4 staleness_rank + volume_rank baseline for a small human-review queue; Week 5 Logistic Regression was not a clear same-split improvement.",
+  "queue_source": "warehouse: March features, April held-out label",
+  "eligible_rows": 23936,
+  "rule": "staleness_rank + volume_rank",
+  "reason_code": "staleness_plus_volume",
+  "target_for_evaluation_only": "April impressions are more than 20% below March",
+  "week4_full_queue_metrics": {
+    "data_source": "warehouse: March features, April held-out label",
+    "eligible_rows": 23936,
+    "label_definition": "April impressions are more than 20% below March",
+    "base_rate": 0.5706885026737968,
+    "rule": "staleness_rank + volume_rank",
+    "reason_code": "staleness_plus_volume",
+    "precision_at_k": {
+      "10": 0.7,
+      "20": 0.6,
+      "50": 0.48,
+      "100": 0.39,
+      "500": 0.338
+    },
+    "roc_auc": 0.5062499216357664
+  },
+  "week5_same_split_comparison": {
+    "test_base_rate": 0.6939970717423133,
+    "baseline": {
+      "rule": "staleness_rank + volume_rank",
+      "precision_at_k": {
+        "10": 0.7,
+        "20": 0.4,
+        "50": 0.6,
+        "100": 0.67,
+        "500": 0.77
+      },
+      "roc_auc": 0.5895317824032015
+    },
+    "logistic_regression": {
+      "precision_at_k": {
+        "10": 0.6,
+        "20": 0.7,
+        "50": 0.68,
+        "100": 0.66,
+        "500": 0.654
+      },
+      "roc_auc": 0.46339140909427384
+    }
+  },
+  "monitoring_reference": {
+    "median_days_since_last_update": 34.0,
+    "median_volume_signal": 11.428571428571429
+  },
+  "exports": [
+    "C:\\INTERNSHIP\\ML-INTERNSHIP\\work\\outputs\\w07_action_playbook_queue.csv",
+    "C:\\INTERNSHIP\\ML-INTERNSHIP\\work\\figures\\w07_baseline_score_distribution.svg",
+    "C:\\INTERNSHIP\\ML-INTERNSHIP\\work\\figures\\w07_week4_precision_at_k.svg"
+  ]
+}
